@@ -13,12 +13,29 @@
             $("button").click(function () {
                 //3.弹出helloworld
                 alert("HelloWorld");
+                alert($(this).text());
+                //Jquery对象和DOM对象
+                //1.由Jquery对象转为DOM对象
+                //1)获取Jquery对象
+                var $btn = $("button");
+                //2)Jquery对象是一个数组
+                alert($btn.length);
+                //3)可以通过数组的下标转为DOM对象
+                alert($btn[1].firstChild.nodeValue);
+
+                //2.由DOM对象转为Jquery对象
+                //1)选取一个DOM对象
+                var btn = document.getElementById("btn");
+                //2)把DOM对象转为一个JQuery对象，使用$()进行包装
+                alert($(btn).text());
             });
 
         })
     </script>
 </head>
 <body>
-    <button>ClickMe</button>
+    <button id="btn">ClickMe</button>
+    <br>
+    <button>ClickMe02</button>
 </body>
 </html>
