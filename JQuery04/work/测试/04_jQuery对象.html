@@ -30,6 +30,29 @@
    需求3. 输出所有button标签的文本
    需求4. 输出'测试三'按钮是所有按钮中的第几个
    */
+
+  //需求1. 统计一共有多少个按钮
+  $(function () {
+      var $btn = $("#button");
+      //需求1. 统计一共有多少个按钮
+      console.log($('button').size(),$('button').length);
+      //需求2. 取出第2个button的文本
+      console.log($('button')[1].innerHTML,$('button').get(1).innerHTML);
+      //需求3. 输出所有button标签的文本
+      $('button').each(function (index,domEle) {
+          console.log(index, domEle.innerHTML,this)
+      })
+      //需求4. 输出'测试三'按钮是所有按钮中的第几个
+      console.log($("#btn3").index());
+
+      /**
+       * 1.伪数组
+       *  Object对象
+       *  length属性
+       *  数值下标属性
+       *  没有数组特别的方法：forEach(),push(),pop(),splice()
+       * **/
+  })
 </script>
 </body>
 </html>
