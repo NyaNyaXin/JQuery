@@ -32,10 +32,14 @@
   /*
    需求:
    1. 选中ul下所有的的span
-   2. 选中ul下所有的子元素span
-   3. 选中class为box的下一个li
-   4. 选中ul下的class为box的元素后面的所有兄弟元素
    */
+    //$('ul span').css('background','blue')
+   //2. 选中ul下所有的子元素span
+      //$('ul>span').css('background','blue')
+   //3. 选中class为box的下一个li
+      //$('.box+li').css('background','cyan')
+   //4. 选中ul下的class为box的元素后面的所有兄弟元素
+  $('ul .box~*').css('background','cyan')
 </script>
 </body>
 </html>
