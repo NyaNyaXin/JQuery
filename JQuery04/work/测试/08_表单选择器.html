@@ -34,10 +34,15 @@
 <script type="text/javascript">
   /*
    需求:
-   1. 选择不可用的文本输入框
-   2. 显示选择爱好 的个数
-   3. 显示选择的城市名称
-   */
+   1. 选择不可用的文本输入框*/
+    //$(':text:disabled').css('background','cyan')
+   //2. 显示选择爱好 的个数
+    console.log($(':checkbox:checked').length);
+   //3. 显示选择的城市名称
+    $(':submit').click(function () {
+       var city = $('select>option:selected').html();
+       alert(city);
+    });
 </script>
 </body>
 </html>
