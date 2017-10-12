@@ -12,7 +12,7 @@
     #tab li {
       float: left;
       list-style: none;
-      width: 80px;
+      width: 120px;
       height: 40px;
       line-height: 40px;
       cursor: pointer;
@@ -63,6 +63,31 @@
     50元包月详情：<br/>&nbsp;每月无限量随心打
   </div>
 </div>
+  <script type="text/javascript" src="jquery-1.10.1.js"></script>
+  <script type="text/javascript">
+    var $contents = $('#container>div');
+    //给三个li加监听
+//    $('#tab>li').click(function () { //隐式遍历
+//        //隐藏所有显示的div内容
+//      $contents.css('display','none');
+//      //显示对应的div内容
+//        //得到当前点击的li再兄弟中的下标
+//        var i = $(this).index();
+//        $contents[i].style.display = 'block';
+//    })
 
+    //优化写法
+    var currentIndex = 0;//当前显示的div的下标
+    $('#tab>li').click(function () { //隐式遍历
+        //隐藏当前已经显示的div内容
+        $contents[currentIndex].style.display = 'none';
+        //显示对应的div内容
+        //得到当前点击的li再兄弟中的下标
+        var index = $(this).index();
+        $contents[index].style.display = 'block';
+        //更新下标
+        currentIndex = index;
+    })
+  </script>
 </body>
 </html>
