@@ -36,7 +36,17 @@
 -->
 <script src="js/jquery-1.10.1.js"></script>
 <script>
-
+  //设置事件委托
+  $('ul').delegate('li','click',function () {
+      this.style.background="red"
+  })
+  $('#btn1').click(function () {
+      $('ul').append('<li>新</li>')
+  })
+  //移除事件委托
+  $('#btn2').click(function () {
+      $('ul').undelegate('click')
+  })
 </script>
 </body>
 </html>

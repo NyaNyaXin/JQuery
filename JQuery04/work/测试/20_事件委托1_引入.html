@@ -25,10 +25,16 @@
 <script src="js/jquery-1.10.1.js"></script>
 <script>
   /*
-   需求：
-   1. 点击 li 背景就会变为红色
-   2. 点击 btn1 就添加一个 li
-  */
+   需求：*/
+
+   //1. 点击 li 背景就会变为红色
+    $('ul>li').click(function () {
+        $(this).css('background','red')
+    })
+   //2. 点击 btn1 就添加一个 li
+    $('#btn').click(function () {
+        $('ul').append('<li>新</li>')
+    })
 
 </script>
 </body>

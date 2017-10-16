@@ -90,15 +90,14 @@
             .append('<td>'+salary+'</td>')
             .append('<td><a href="deleteEmp?id="'+Date.now()+'>Delete</a></td>')
             .appendTo('#employeeTable')
-            .find('a').click(clickDelete)
 
         //3.清除输入
          $empName.val('')
          $email.val('')
          $salary.val('')
     })
-  //删除
-  $('#employeeTable a').click(clickDelete)
+  //删除    通过table事件对所有a的click事件委托
+  $('#employeeTable').delegate('a','click',clickDelete)
       /*
       * 点击删除的毁回调函数
       * */
