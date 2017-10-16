@@ -21,6 +21,45 @@
   <input type="button" id="sendBtn" value="提　交"/>
 </form>
 
+<script type="text/javascript" src="jquery-1.10.1.js"></script>
+<script type="text/javascript">
+
+
+  var $checkedAllBox = $('#checkedAllBox')
+  var $items = $(':checkbox[name=items]')
+  //全选
+  $('#checkedAllBtn').click(function () {
+      $items.prop('checked',true)
+      $checkedAllBox.prop('checked',true)
+  })
+  //全不选
+  $('#checkedNoBtn').click(function () {
+      $items.prop('checked',false)
+      $checkedAllBox.prop('checked',false)
+  })
+  //反选
+  $('#checkedRevBtn').click(function () {
+      $items.each(function () {
+          this.checked = !this.checked
+      })
+
+      $checkedAllBox.prop('checked',$items.not(':checked').length === 0)
+  })
+  //提交
+  $('#sendBtn').click(function () {
+      $items.filter(':checked').each(function () {
+          alert(this.value)
+      })
+  })
+  //全选/全不选
+  $checkedAllBox.click(function () {
+      $items.prop('checked',this.checked)
+  })
+  //更新全选状态
+  $items.click(function () {
+      $checkedAllBox.prop('checked',$items.not(':checked').length === 0)
+  })
+</script>
 </body>
 
 </html>
